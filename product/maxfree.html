@@ -329,8 +329,9 @@
       }
 
       window.addEventListener("DOMContentLoaded", () => {
-        loadModule("header-module", "/module/header.html");
-        loadModule("footer-module", "/module/footer.html");
+        // 현재 폴더(product)를 벗어나 상위의 module 폴더를 찾도록 수정
+        loadModule("header-module", "../module/header.html");
+        loadModule("footer-module", "../module/footer.html");
       });
     </script>
   </body>
