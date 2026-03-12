@@ -211,6 +211,13 @@
         background: var(--soft);
       }
 
+      .media-cap {
+        padding: 12px 14px;
+        font-size: 12px;
+        color: #7a8596;
+        border-top: 1px solid var(--line);
+      }
+
       .stats {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -411,6 +418,13 @@
         aspect-ratio: 16 / 11;
         object-fit: cover;
         background: var(--soft);
+      }
+
+      .media .cap {
+        padding: 12px 14px;
+        font-size: 12px;
+        color: #7a8596;
+        border-top: 1px solid var(--line);
       }
 
       /* ===== Options ===== */
@@ -892,7 +906,7 @@
           max-width: 1920px;
           margin: 0 auto;
           aspect-ratio: 1920/620;
-          background: url(&quot;https://gi.esmplus.com/ipmagic2/KSH/01NEW_IMG/IPMALL/Maxfree/v4.jpg&quot;)
+          background: url(&quot;../img/home/maxfree/title.jpg&quot;)
             center/cover no-repeat;
           display: flex;
           flex-direction: column;
@@ -1650,9 +1664,6 @@
     <div id="footer-module"></div>
 
     <script>
-      /**
-       * ✅ 여기만 바꾸면 이미지/링크가 전체 반영됩니다.
-       */
       const LINKS = {
         aa8: "https://www.ipmall.co.kr/goods/goods_view.php?goodsNo=1000005542",
         combo:
@@ -1660,22 +1671,20 @@
       };
 
       const ASSETS = {
-        // 대표/상단
-        hero: "https://gi.esmplus.com/ipmagic2/KSH/01NEW_IMG/IPMALL/Maxfree/v4.jpg",
+        // 대표/상단 (수정된 깃허브 내부 경로)
+        hero: "../img/home/maxfree/title.jpg",
 
-        // 스토리 이미지 슬롯
-        story_ep1: "", // 에피소드 1 이미지 주소
-        story_ep2: "", // 에피소드 2 이미지 주소
-        story_ep3:
-          "https://gi.esmplus.com/ipmagic2/KSH/01NEW_IMG/IPMALL/Maxfree/v3.jpg",
-        story_ep4:
-          "https://gi.esmplus.com/ipmagic2/KSH/01NEW_IMG/IPMALL/Maxfree/pvi1.jpg",
+        // 스토리 이미지 슬롯 (수정된 깃허브 내부 경로, 오타 stroy 유지)
+        story_ep1: "../img/home/maxfree/stroy_ep1.jpg",
+        story_ep2: "../img/home/maxfree/stroy_ep2.jpg",
+        story_ep3: "../img/home/maxfree/stroy_ep3.jpg",
+        story_ep4: "../img/home/maxfree/stroy_ep4.jpg",
 
-        // 중간 섹션 이미지
-        case: "https://gi.esmplus.com/ipmagic2/KSH/01NEW_IMG/IPMALL/Maxfree/pvi1.jpg",
-        meta: "https://gi.esmplus.com/ipmagic2/KSH/01NEW_IMG/IPMALL/Maxfree/v4.jpg", // 메타퀘스트 호환성용
+        // 중간 섹션 이미지 (수정된 깃허브 내부 경로)
+        case: "../img/home/maxfree/space_saving.jpg",
+        meta: "../img/home/maxfree/vr_optimized.jpg",
 
-        // 옵션 이미지
+        // 옵션 이미지 (기존 유지)
         option_aa8:
           "https://gi.esmplus.com/ipmagic2/KSH/01NEW_IMG/IPMALL/Maxfree/v1.jpg",
         option_combo:
@@ -1694,8 +1703,6 @@
             <rect width="100%" height="100%" fill="url(#g)"/>
             <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle"
               font-family="Pretendard, sans-serif" font-size="44" fill="#8aa0b5">${text}</text>
-            <text x="50%" y="58%" text-anchor="middle" dominant-baseline="middle"
-              font-family="Pretendard, sans-serif" font-size="18" fill="#9bb0c2">이미지 URL을 ASSETS에 넣으면 자동 반영됩니다</text>
           </svg>
         `;
         return (
@@ -1703,7 +1710,7 @@
         );
       }
 
-      // 이미지 렌더링
+      // 이미지 렌더링 (캡션 관련 코드 완전 삭제)
       document.querySelectorAll("img[data-asset]").forEach((img) => {
         const key = img.dataset.asset;
         const src = ASSETS[key];
