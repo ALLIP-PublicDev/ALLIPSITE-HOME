@@ -211,13 +211,6 @@
         background: var(--soft);
       }
 
-      .media-cap {
-        padding: 12px 14px;
-        font-size: 12px;
-        color: #7a8596;
-        border-top: 1px solid var(--line);
-      }
-
       .stats {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -418,13 +411,6 @@
         aspect-ratio: 16 / 11;
         object-fit: cover;
         background: var(--soft);
-      }
-
-      .media .cap {
-        padding: 12px 14px;
-        font-size: 12px;
-        color: #7a8596;
-        border-top: 1px solid var(--line);
       }
 
       /* ===== Options ===== */
@@ -681,7 +667,123 @@
         font-size: 14px;
       }
 
+      /* ✨ 측면 고정 네비게이션 (TOC & Buttons) 업데이트 ✨ */
+      .side-nav-menu {
+        position: fixed;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        z-index: 999;
+      }
+
+      .toc-wrapper {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        padding: 12px 10px; /* 패딩 축소 */
+        box-shadow: var(--shadow);
+        width: 150px; /* 내부너비 축소 */
+      }
+
+      .toc-title {
+        margin: 0 0 12px 0;
+        font-size: 13px; /* 폰트 사이즈 감소 */
+        color: var(--ink);
+        font-weight: 900;
+        letter-spacing: -0.5px;
+        border-bottom: 2px solid var(--line);
+        padding-bottom: 8px;
+      }
+
+      .toc-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .toc-link {
+        display: block;
+        font-size: 12px; /* 폰트 사이즈 감소 */
+        color: var(--muted);
+        font-weight: 600;
+        text-decoration: none;
+        padding: 6px 10px; /* 패딩 축소 */
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        line-height: 1.4;
+        word-break: keep-all;
+      }
+
+      .toc-link:hover {
+        background: var(--soft);
+        color: var(--ink);
+      }
+
+      /* 스크롤 스파이 활성화 스타일 */
+      .toc-link.active {
+        background: rgba(37, 160, 219, 0.1);
+        color: var(--brand);
+        font-weight: 800;
+      }
+
+      .action-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .kakao-btn,
+      .top-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px 12px; /* 패딩 12/10px 비율로 축소 */
+        border-radius: 12px;
+        font-weight: 800;
+        font-size: 12px; /* 폰트 사이즈 감소 */
+        text-decoration: none;
+        transition: all 0.2s ease;
+        box-shadow: var(--shadow);
+      }
+
+      .kakao-btn {
+        background: #fee500;
+        color: #381e1f;
+        border: 1px solid #f6de00;
+      }
+
+      .kakao-btn:hover {
+        filter: brightness(0.95);
+        transform: translateY(-2px);
+      }
+
+      .top-btn {
+        background: #fff;
+        color: var(--ink);
+        border: 1px solid var(--line);
+      }
+
+      .top-btn:hover {
+        background: var(--soft);
+        transform: translateY(-2px);
+      }
+
       /* ===== Responsive ===== */
+      /* 1440px 이하 모바일/노트북 크기에서는 측면 메뉴 비활성화 */
+      @media (max-width: 1440px) {
+        .side-nav-menu {
+          display: none !important;
+        }
+      }
+
       @media (max-width: 980px) {
         .hero-grid {
           grid-template-columns: 1fr;
@@ -728,6 +830,59 @@
 
   <body>
     <div id="header-module"></div>
+
+    <aside class="side-nav-menu">
+      <div class="toc-wrapper">
+        <h4 class="toc-title">빠른 이동</h4>
+        <ul class="toc-list">
+          <li><a href="#empathy" class="toc-link">배터리 스트레스</a></li>
+          <li><a href="#features" class="toc-link">8가지 혁신 기술</a></li>
+          <li><a href="#options" class="toc-link">맞춤형 옵션</a></li>
+          <li><a href="#led" class="toc-link">LED 상태표</a></li>
+          <li><a href="#compare" class="toc-link">배터리 비교표</a></li>
+          <li><a href="#video" class="toc-link">스마트 라이프</a></li>
+          <li><a href="#faq" class="toc-link">자주 묻는 질문(FAQ)</a></li>
+        </ul>
+      </div>
+
+      <div class="action-buttons">
+        <a
+          href="https://pf.kakao.com/_sssxnxb/chat"
+          target="_blank"
+          class="kakao-btn"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="#381E1F"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 3C6.477 3 2 6.541 2 10.909C2 13.673 3.659 16.103 6.136 17.518C5.922 18.257 5.253 20.672 5.201 20.865C5.148 21.058 5.289 21.045 5.412 20.963C5.549 20.871 8.243 19.049 9.317 18.318C10.169 18.647 11.066 18.818 12 18.818C17.523 18.818 22 15.277 22 10.909C22 6.541 17.523 3 12 3Z"
+            />
+          </svg>
+          <span>카톡 문의</span>
+        </a>
+        <a href="#top" class="top-btn">
+          <svg
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            ></path>
+          </svg>
+          <span>맨 위로</span>
+        </a>
+      </div>
+    </aside>
 
     <main id="top">
       <section
@@ -847,9 +1002,6 @@
                 data-asset="hero"
                 alt="Maxfree 대표 이미지"
               />
-              <figcaption class="media-cap">
-                Maxfree 리튬이온 8-in-1 스마트 충전 세트
-              </figcaption>
             </figure>
 
             <div class="stats" aria-label="핵심 수치 요약">
@@ -1099,8 +1251,7 @@
           </div>
 
           <div class="media">
-            <img data-asset="case" alt="충전 케이스 이미지 (교체 가능)" />
-            <div class="cap">이미지 교체: ASSETS.case</div>
+            <img data-asset="case" alt="충전 케이스 이미지" />
           </div>
         </div>
       </section>
@@ -1109,7 +1260,6 @@
         <div class="container split">
           <div class="media">
             <img data-asset="meta" alt="메타퀘스트 최적화" />
-            <div class="cap">이미지 교체: ASSETS.meta</div>
           </div>
 
           <div>
@@ -1147,10 +1297,7 @@
               </div>
 
               <div class="option-body">
-                <img
-                  data-asset="option_aa8"
-                  alt="AA 8개 세트 이미지 (교체 가능)"
-                />
+                <img data-asset="option_aa8" alt="AA 8개 세트 이미지" />
                 <div>
                   <ul class="option-list">
                     <li>리튬이온 AA 배터리 8개 구성</li>
@@ -1184,10 +1331,7 @@
               </div>
 
               <div class="option-body">
-                <img
-                  data-asset="option_combo"
-                  alt="AA+AAA 콤보 세트 이미지 (교체 가능)"
-                />
+                <img data-asset="option_combo" alt="AA+AAA 콤보 세트 이미지" />
                 <div>
                   <ul class="option-list">
                     <li>리튬이온 AA 4개 + AAA 4개 혼합 구성</li>
@@ -1598,6 +1742,33 @@
         // 상대 경로 적용 (product 폴더에서 한 단계 위로)
         loadModule("header-module", "../module/header.html");
         loadModule("footer-module", "../module/footer.html");
+
+        // ✨ 스크롤 스파이 로직 (목차 자동 하이라이트) ✨
+        const tocLinks = document.querySelectorAll(".toc-link");
+        const sections = document.querySelectorAll(
+          'section[id], main[id="top"]',
+        );
+
+        const observerOptions = {
+          root: null,
+          rootMargin: "-20% 0px -70% 0px", // 화면 중앙 부근 감지
+          threshold: 0,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${entry.target.id}`) {
+                  link.classList.add("active");
+                }
+              });
+            }
+          });
+        }, observerOptions);
+
+        sections.forEach((section) => observer.observe(section));
       });
     </script>
   </body>
