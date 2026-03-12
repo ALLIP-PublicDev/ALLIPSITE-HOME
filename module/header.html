@@ -1,4 +1,5 @@
 <style>
+  /* ===== Header 2026 Modern Trend ===== */
   .nav-wrapper {
     display: flex;
     justify-content: space-between;
@@ -7,39 +8,144 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    font-family:
+      "Pretendard",
+      system-ui,
+      -apple-system,
+      sans-serif;
   }
+
+  /* 로고 이미지 영역 */
   .logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: #25a0db;
-    cursor: default;
-  }
-  .menu a {
-    font-size: 18px;
-    font-weight: 500;
-    padding: 10px 20px;
-    color: #333;
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    transition: 0.3s;
   }
+
+  .logo img {
+    height: 38px; /* 헤더 비율에 맞는 세련된 로고 사이즈 */
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* 우측 메뉴 & 버튼 그룹 */
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .menu {
+    display: flex;
+    gap: 8px;
+  }
+
+  .menu a {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 16px;
+    color: #334155; /* 세련된 다크 그레이 */
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
   .menu a:hover {
     color: #25a0db;
+    background-color: #f1f5f9;
+  }
+
+  /* 아이피몰 바로가기 버튼 (눈에 띄게 강조) */
+  .mall-btn {
+    background-color: #25a0db;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 999px; /* 트렌디한 알약 형태 */
+    box-shadow: 0 4px 12px rgba(37, 160, 219, 0.2);
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .mall-btn:hover {
+    background-color: #1e87bb;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(37, 160, 219, 0.3);
+  }
+
+  /* 모바일 최적화 */
+  @media (max-width: 768px) {
+    .nav-right {
+      gap: 16px;
+    }
+    .menu a {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+    .mall-btn {
+      padding: 10px 16px;
+      font-size: 13px;
+    }
   }
 </style>
 
 <header
   style="
-    background: #fff;
-    border-bottom: 1px solid #eee;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e2e8f0;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
   "
 >
   <div class="nav-wrapper">
-    <div class="logo">ALL IP</div>
-    <nav class="menu">
-      <a href="../product/maxfree.html">맥스프리</a>
-    </nav>
+    <a href="../index.html" class="logo" aria-label="올아이피정보통신 홈으로">
+      <img
+        src="../img/home/logo.png"
+        alt="ALL IP 로고"
+        onerror="
+          this.onerror = null;
+          this.src =
+            'data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%2240%22 viewBox=%220 0 120 40%22%3E%3Crect width=%22120%22 height=%2240%22 fill=%22%23f1f5f9%22 rx=%228%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-family=%22sans-serif%22 font-size=%2214%22 font-weight=%22bold%22 fill=%22%2325a0db%22%3EALL IP LOGO%3C/text%3E%3C/svg%3E';
+        "
+      />
+    </a>
+
+    <div class="nav-right">
+      <nav class="menu">
+        <a href="../product/maxfree.html">맥스프리</a>
+      </nav>
+
+      <a
+        href="https://www.ipmall.co.kr/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mall-btn"
+      >
+        아이피몰 바로가기
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+          ></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+      </a>
+    </div>
   </div>
 </header>
