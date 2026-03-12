@@ -211,13 +211,6 @@
         background: var(--soft);
       }
 
-      .media-cap {
-        padding: 12px 14px;
-        font-size: 12px;
-        color: #7a8596;
-        border-top: 1px solid var(--line);
-      }
-
       .stats {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -418,13 +411,6 @@
         aspect-ratio: 16 / 11;
         object-fit: cover;
         background: var(--soft);
-      }
-
-      .media .cap {
-        padding: 12px 14px;
-        font-size: 12px;
-        color: #7a8596;
-        border-top: 1px solid var(--line);
       }
 
       /* ===== Options ===== */
@@ -759,7 +745,7 @@
         align-items: center;
         justify-content: center;
         gap: 6px;
-        padding: 10px 12px; /* 패딩 12/10px 비율로 축소 */
+        padding: 10px 12px; /* 패딩 축소 */
         border-radius: 12px;
         font-weight: 800;
         font-size: 12px; /* 폰트 사이즈 감소 */
@@ -906,8 +892,8 @@
           max-width: 1920px;
           margin: 0 auto;
           aspect-ratio: 1920/620;
-          background: url(&quot;../img/home/maxfree/title.jpg&quot;)
-            center/cover no-repeat;
+          background: url(&quot;../img/maxfree/title.jpg&quot;) center/cover
+            no-repeat;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -1043,7 +1029,7 @@
             style="text-align: center; margin-bottom: 70px"
           >
             <h2 style="font-size: 34px; color: var(--brand)">
-              2025년, 당신의 '배터리 스트레스'를 끝내는 방법
+              당신의 '배터리 스트레스', 평생 없애드립니다
             </h2>
             <p>더 이상 배터리 때문에 일상의 소중한 흐름을 끊지 마세요.</p>
           </div>
@@ -1108,7 +1094,7 @@
               <p>
                 대혼란의 서랍 속, 당신은 맥스프리(Maxfree) 8-in-1 스마트 충전지
                 세트를 발견합니다. 이것은 단순한 건전지가 아닙니다. 당신의
-                배터리 라이프를 혁신할 솔루션입니다.
+                배터리 라이프를 평생 혁신할 솔루션입니다.
               </p>
               <ul class="bullets">
                 <li>
@@ -1135,9 +1121,9 @@
           <div class="story-row reverse" style="margin-bottom: 0">
             <div class="story-text">
               <span class="eyebrow">Episode 4. 라이프스타일의 진화</span>
-              <h3>2026년, 스트레스 제로의 일상</h3>
+              <h3>평생 지속되는 스트레스 제로의 일상</h3>
               <p>
-                2026년의 당신은 더 이상 배터리 때문에 스트레스받지 않습니다. VR
+                이제 당신은 더 이상 배터리 때문에 스트레스받지 않습니다. VR
                 게임을 할 때도 컨트롤러 꺼질 걱정 없이 몰입하고, 아이는 장난감을
                 신나게 가지고 놉니다.
               </p>
@@ -1664,6 +1650,9 @@
     <div id="footer-module"></div>
 
     <script>
+      /**
+       * ✅ 여기만 바꾸면 이미지/링크가 전체 반영됩니다.
+       */
       const LINKS = {
         aa8: "https://www.ipmall.co.kr/goods/goods_view.php?goodsNo=1000005542",
         combo:
@@ -1671,18 +1660,18 @@
       };
 
       const ASSETS = {
-        // 대표/상단 (수정된 깃허브 내부 경로)
-        hero: "../img/home/maxfree/title.jpg",
+        // 대표/상단 (수정된 깃허브 내부 상대 경로)
+        hero: "../img/maxfree/title.jpg",
 
-        // 스토리 이미지 슬롯 (수정된 깃허브 내부 경로, 오타 stroy 유지)
-        story_ep1: "../img/home/maxfree/stroy_ep1.jpg",
-        story_ep2: "../img/home/maxfree/stroy_ep2.jpg",
-        story_ep3: "../img/home/maxfree/stroy_ep3.jpg",
-        story_ep4: "../img/home/maxfree/stroy_ep4.jpg",
+        // 스토리 이미지 슬롯
+        story_ep1: "../img/maxfree/stroy_ep1.jpg",
+        story_ep2: "../img/maxfree/stroy_ep2.jpg",
+        story_ep3: "../img/maxfree/stroy_ep3.jpg",
+        story_ep4: "../img/maxfree/stroy_ep4.jpg",
 
-        // 중간 섹션 이미지 (수정된 깃허브 내부 경로)
-        case: "../img/home/maxfree/space_saving.jpg",
-        meta: "../img/home/maxfree/vr_optimized.jpg",
+        // 중간 섹션 이미지
+        case: "../img/maxfree/space_saving.jpg",
+        meta: "../img/maxfree/vr_optimized.jpg",
 
         // 옵션 이미지 (기존 유지)
         option_aa8:
@@ -1710,7 +1699,7 @@
         );
       }
 
-      // 이미지 렌더링 (캡션 관련 코드 완전 삭제)
+      // 이미지 렌더링 (캡션 삭제 완료)
       document.querySelectorAll("img[data-asset]").forEach((img) => {
         const key = img.dataset.asset;
         const src = ASSETS[key];
