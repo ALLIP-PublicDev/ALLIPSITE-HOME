@@ -3,76 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>올아이피 콤보 - 혁신적인 리튬이온배터리</title>
+    <title>All-IP Maxfree | 메타퀘스트 3S 최적화 리튬이온 배터리</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
-        :root { --primary: #007AFF; --black: #000; --white: #fff; --gray: #666; }
-        body { margin: 0; font-family: 'Pretendard', sans-serif; -webkit-font-smoothing: antialiased; background: var(--white); }
-        section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; box-sizing: border-box; }
+        :root {
+            --primary: #007AFF;
+            --li-ion-blue: #00a8ff;
+            --nimh-green: #4cd137;
+            --error-red: #ff4757;
+            --dark: #1e272e;
+            --light: #f5f6fa;
+        }
+
+        body { margin: 0; font-family: 'Pretendard', sans-serif; color: #333; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         
-        /* 히어로 섹션 */
-        .hero { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; background: #1a1a1a; color: var(--white); border-bottom: 1px solid #333; }
-        .hero-title { font-size: clamp(28px, 5vw, 42px); font-weight: 700; line-height: 1.3; margin-bottom: 20px; word-break: keep-all; }
-        .hero-sub { font-size: clamp(18px, 3vw, 22px); margin-bottom: 40px; font-weight: 400; color: #ccc; word-break: keep-all; }
-        .btn-buy { display: inline-block; background: var(--black); color: var(--white); padding: 16px 40px; border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); transition: 0.3s; font-size: 18px; }
-        .btn-buy:hover { background: #333; transform: translateY(-2px); }
+        /* 1. Hero Section */
+        .hero { background: var(--dark); color: white; padding: 100px 0; text-align: center; }
+        .hero h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 700; margin-bottom: 20px; }
+        .hero p { font-size: 20px; font-weight: 400; color: #ccc; margin-bottom: 40px; }
+        .hero img { max-width: 600px; width: 90%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
 
-        /* 질문 섹션 */
-        .question { text-align: center; padding: 100px 20px; border-bottom: 1px solid #eee; }
-        .q-top { font-size: 20px; color: #999; margin-bottom: 10px; font-weight: 400; }
-        .q-bottom { font-size: clamp(26px, 5vw, 42px); font-weight: 700; color: var(--black); }
+        /* 2. Key Features (Grid) */
+        .features { padding: 80px 0; background: var(--light); }
+        .section-title { text-align: center; font-size: 32px; font-weight: 700; margin-bottom: 50px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .feature-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .feature-card h3 { font-size: 22px; font-weight: 700; color: var(--primary); margin-bottom: 15px; }
+        .feature-card p { font-weight: 400; font-size: 16px; color: #666; }
 
-        /* 숏츠 & 특징 섹션 */
-        .feature-grid { display: flex; flex-wrap: wrap; gap: 50px; align-items: center; }
-        .video-box { flex: 1; min-width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); background: #000; }
-        .video-box iframe { width: 100%; aspect-ratio: 9/16; display: block; border: none; }
-        .text-box { flex: 1.2; min-width: 300px; }
-        .f-item { margin-bottom: 30px; }
-        .f-label { font-size: 22px; font-weight: 700; color: #222; margin-bottom: 8px; display: flex; align-items: center; }
-        .f-label::before { content: ''; width: 4px; height: 20px; background: var(--primary); margin-right: 12px; }
-        .f-text { font-size: 17px; color: var(--gray); font-weight: 400; line-height: 1.7; word-break: keep-all; }
+        /* 3. LED Status Guide (Table-like Card) */
+        .led-guide { padding: 80px 0; }
+        .led-container { background: white; border: 1px solid #eee; border-radius: 20px; overflow: hidden; }
+        .led-row { display: flex; align-items: center; padding: 20px; border-bottom: 1px solid #eee; }
+        .led-indicator { width: 20px; height: 20px; border-radius: 50%; margin-right: 20px; flex-shrink: 0; }
+        .flash { animation: blink 1s infinite; }
+        @keyframes blink { 50% { opacity: 0.3; } }
+
+        /* 4. Comparison Table */
+        .comp-table-wrapper { overflow-x: auto; padding: 40px 0; }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th, td { padding: 15px; border: 1px solid #eee; text-align: center; }
+        th { background: var(--dark); color: white; }
+        .highlight { background: #e3f2fd; font-weight: 700; }
+
+        /* 5. Buy Now / Options */
+        .cta { background: var(--primary); color: white; padding: 80px 0; text-align: center; }
+        .options { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+        .option-box { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.3); min-width: 200px; }
 
         @media (max-width: 768px) {
-            .hero { text-align: left; padding: 40px 20px; }
-            .feature-grid { flex-direction: column; }
-            .video-box { width: 100%; max-width: 350px; margin: 0 auto; }
+            .led-row { flex-direction: column; text-align: center; }
+            .led-indicator { margin: 0 0 10px 0; }
         }
     </style>
 </head>
 <body>
-    <section class="hero">
-        <div class="hero-title">올아이피 콤보 건전지 리튬이온배터리<br>8개입 충전용 패키지</div>
-        <div class="hero-sub">성능, 공간 부피, 편리성, 안전성 모두 한 번에 잡았다.</div>
-        <a href="https://www.ipmall.co.kr/goods/goods_search.php?adUrl=https%3A%2F%2Fwww.ipmall.co.kr%2Fgoods%2Fgoods_view.php%3FgoodsNo%3D1000004953%26mtn%3D10%255E%257C%255E%25EB%25B2%25A0%25EC%258A%25A4%25ED%258A%25B8%25EC%2583%2581%25ED%2592%2588%255E%257C%255En&keyword=%EB%A7%A5%EC%8A%A4%ED%94%84%EB%A6%AC&recentCount=10" target="_top" class="btn-buy">구매하러가기</a>
-    </section>
 
-    <section class="question">
-        <div class="q-top">건전지 때문에</div>
-        <div class="q-bottom">불편하시지 않으셨나요?</div>
-    </section>
-
-    <section class="feature-grid">
-        <div class="video-box">
-            <iframe src="https://www.youtube.com/embed/영상의ID값" allowfullscreen></iframe>
+    <header class="hero">
+        <div class="container">
+            <h1>All-IP Maxfree 리튬이온 배터리</h1>
+            <p>Meta Quest 3/3S 컨트롤러를 위한 1.5V 정전압 솔루션</p>
+            <img src="https://gi.esmplus.com/ipmagic2/KSH/01NEW_IMG/IPMALL/Maxfree/v4.jpg" alt="Maxfree Hero Image">
         </div>
-        <div class="text-box">
-            <div class="f-item">
-                <div class="f-label">끝까지 강력한 1.5V 출력</div>
-                <div class="f-text">배터리 잔량에 관계없이 다 쓸 때까지 일정한 전압을 유지하여 기기 성능을 극대화합니다.</div>
-            </div>
-            <div class="f-item">
-                <div class="f-label">고성능 리튬이온 기술</div>
-                <div class="f-text">기존 알칼라인 대비 가볍고 에너지 효율이 뛰어나 장시간 사용에 최적화되어 있습니다.</div>
-            </div>
-            <div class="f-item">
-                <div class="f-label">2500번 재충전의 편리함</div>
-                <div class="f-text">영리한 리트리버가 물어온 바로 그 제품! 환경 보호는 물론 가계 경제까지 생각했습니다.</div>
+    </header>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">왜 Maxfree 리튬이온인가?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>⚡️ 1.5V 안정적인 출력</h3>
+                    <p>VR 컨트롤러와 같은 고성능 기기에서 배터리 소진 시까지 끊김 없는 출력을 제공합니다.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔋 3600mWh 대용량</h3>
+                    <p>초대용량 전력으로 잦은 교체 없이 더 오래, 더 몰입감 넘치는 게이밍을 즐기세요.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>♻️ 2500+회 재충전</h3>
+                    <p>일회용 배터리 대비 압도적인 경제성. 한 번의 구매로 수년간 걱정 없이 사용 가능합니다.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <div style="text-align: center; padding: 60px 20px; color: #bbb; font-size: 13px; border-top: 1px solid #eee;">
-        &copy; ALL-IP Information & Communication Co., Ltd. All rights reserved.
-    </div>
+    <section class="led-guide">
+        <div class="container">
+            <h2 class="section-title">스마트 LED 상태 가이드</h2>
+            <div class="led-container">
+                <div class="led-row">
+                    <div class="led-indicator flash" style="background: var(--li-ion-blue);"></div>
+                    <div><strong>리튬 배터리 충전 중:</strong> 파란색 점멸</div>
+                </div>
+                <div class="led-row">
+                    <div class="led-indicator" style="background: var(--li-ion-blue);"></div>
+                    <div><strong>리튬 배터리 완충:</strong> 파란색 고정</div>
+                </div>
+                <div class="led-row">
+                    <div class="led-indicator flash" style="background: var(--nimh-green);"></div>
+                    <div><strong>니켈수소(NiMH) 충전 중:</strong> 녹색 점멸</div>
+                </div>
+                <div class="led-row">
+                    <div class="led-indicator flash" style="background: var(--error-red);"></div>
+                    <div><strong>오류 발생:</strong> 빨간색 점멸 (부적절한 배터리/과전류 감지)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title">배터리 종류별 비교</h2>
+        <div class="comp-table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>특징</th>
+                        <th>알칼라인 (일회용)</th>
+                        <th>니켈수소 (NiMH)</th>
+                        <th class="highlight">Maxfree 리튬이온</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>재사용</td>
+                        <td>불가능</td>
+                        <td>충전 가능</td>
+                        <td class="highlight">충전 가능 (2500회+)</td>
+                    </tr>
+                    <tr>
+                        <td>전압 안정성</td>
+                        <td>점점 감소</td>
+                        <td>1.2V (낮음)</td>
+                        <td class="highlight">1.5V 정전압 유지</td>
+                    </tr>
+                    <tr>
+                        <td>자가 방전</td>
+                        <td>낮음</td>
+                        <td>높음 (방전 빠름)</td>
+                        <td class="highlight">매우 낮음</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>지금 바로 최상의 에너지를 선택하세요</h2>
+            <div class="options">
+                <div class="option-box">
+                    <strong>콤보 세트</strong><br>AA 4개 + AAA 4개 + 충전기
+                </div>
+                <div class="option-box">
+                    <strong>AA 전용 세트</strong><br>AA 8개 + 충전기
+                </div>
+            </div>
+            <br><br>
+            <a href="https://www.ipmall.co.kr/goods/goods_view.php?goodsNo=1000004953" class="btn-buy" style="background: white; color: var(--primary); padding: 15px 50px; border-radius: 50px; text-decoration: none; font-weight: 700;">구매하러 가기</a>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; color: #999; font-size: 14px;">
+        &copy; 2026 ALL-IP Maxfree. 글로벌 인증 완료 (UL, FCC, CE, KC 등)
+    </footer>
+
 </body>
 </html>
