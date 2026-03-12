@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>올아이피 콤보 - 혁신적인 리튬이온배터리</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <style>
+        :root { --primary: #007AFF; --black: #000; --white: #fff; --gray: #666; }
+        body { margin: 0; font-family: 'Pretendard', sans-serif; -webkit-font-smoothing: antialiased; background: var(--white); }
+        section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; box-sizing: border-box; }
+        
+        /* 히어로 섹션 */
+        .hero { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; background: #1a1a1a; color: var(--white); border-bottom: 1px solid #333; }
+        .hero-title { font-size: clamp(28px, 5vw, 42px); font-weight: 700; line-height: 1.3; margin-bottom: 20px; word-break: keep-all; }
+        .hero-sub { font-size: clamp(18px, 3vw, 22px); margin-bottom: 40px; font-weight: 400; color: #ccc; word-break: keep-all; }
+        .btn-buy { display: inline-block; background: var(--black); color: var(--white); padding: 16px 40px; border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); transition: 0.3s; font-size: 18px; }
+        .btn-buy:hover { background: #333; transform: translateY(-2px); }
+
+        /* 질문 섹션 */
+        .question { text-align: center; padding: 100px 20px; border-bottom: 1px solid #eee; }
+        .q-top { font-size: 20px; color: #999; margin-bottom: 10px; font-weight: 400; }
+        .q-bottom { font-size: clamp(26px, 5vw, 42px); font-weight: 700; color: var(--black); }
+
+        /* 숏츠 & 특징 섹션 */
+        .feature-grid { display: flex; flex-wrap: wrap; gap: 50px; align-items: center; }
+        .video-box { flex: 1; min-width: 300px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); background: #000; }
+        .video-box iframe { width: 100%; aspect-ratio: 9/16; display: block; border: none; }
+        .text-box { flex: 1.2; min-width: 300px; }
+        .f-item { margin-bottom: 30px; }
+        .f-label { font-size: 22px; font-weight: 700; color: #222; margin-bottom: 8px; display: flex; align-items: center; }
+        .f-label::before { content: ''; width: 4px; height: 20px; background: var(--primary); margin-right: 12px; }
+        .f-text { font-size: 17px; color: var(--gray); font-weight: 400; line-height: 1.7; word-break: keep-all; }
+
+        @media (max-width: 768px) {
+            .hero { text-align: left; padding: 40px 20px; }
+            .feature-grid { flex-direction: column; }
+            .video-box { width: 100%; max-width: 350px; margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-title">올아이피 콤보 건전지 리튬이온배터리<br>8개입 충전용 패키지</div>
+        <div class="hero-sub">성능, 공간 부피, 편리성, 안전성 모두 한 번에 잡았다.</div>
+        <a href="https://www.ipmall.co.kr/goods/goods_search.php?adUrl=https%3A%2F%2Fwww.ipmall.co.kr%2Fgoods%2Fgoods_view.php%3FgoodsNo%3D1000004953%26mtn%3D10%255E%257C%255E%25EB%25B2%25A0%25EC%258A%25A4%25ED%258A%25B8%25EC%2583%2581%25ED%2592%2588%255E%257C%255En&keyword=%EB%A7%A5%EC%8A%A4%ED%94%84%EB%A6%AC&recentCount=10" target="_top" class="btn-buy">구매하러가기</a>
+    </section>
+
+    <section class="question">
+        <div class="q-top">건전지 때문에</div>
+        <div class="q-bottom">불편하시지 않으셨나요?</div>
+    </section>
+
+    <section class="feature-grid">
+        <div class="video-box">
+            <iframe src="https://www.youtube.com/embed/영상의ID값" allowfullscreen></iframe>
+        </div>
+        <div class="text-box">
+            <div class="f-item">
+                <div class="f-label">끝까지 강력한 1.5V 출력</div>
+                <div class="f-text">배터리 잔량에 관계없이 다 쓸 때까지 일정한 전압을 유지하여 기기 성능을 극대화합니다.</div>
+            </div>
+            <div class="f-item">
+                <div class="f-label">고성능 리튬이온 기술</div>
+                <div class="f-text">기존 알칼라인 대비 가볍고 에너지 효율이 뛰어나 장시간 사용에 최적화되어 있습니다.</div>
+            </div>
+            <div class="f-item">
+                <div class="f-label">2500번 재충전의 편리함</div>
+                <div class="f-text">영리한 리트리버가 물어온 바로 그 제품! 환경 보호는 물론 가계 경제까지 생각했습니다.</div>
+            </div>
+        </div>
+    </section>
+
+    <div style="text-align: center; padding: 60px 20px; color: #bbb; font-size: 13px; border-top: 1px solid #eee;">
+        &copy; ALL-IP Information & Communication Co., Ltd. All rights reserved.
+    </div>
+</body>
+</html>
